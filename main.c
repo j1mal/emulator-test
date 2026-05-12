@@ -3,5 +3,5 @@
 
 
 int main() {
-    printf("EMULATION STARTED. MAIN FUNCTION RUNNING.\n")
+    printf("EMULATION STARTED. MAIN FUNCTION RUNNING.\n");
 }
