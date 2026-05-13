@@ -4,6 +4,7 @@
 unsigned char PC = 0; // the program counter . it stores 0 to 256
 unsigned char memory[256]; // the memory.
 unsigned char A = 0;
+unsigned char B = 0;
 
 int running = 1;
 
