@@ -11,7 +11,7 @@ int running = 1;
 
 
 void sampleProgram() {
-    printf("RUNNING SAMPLE PROGRAM.\n");
+    printf("RUNNING 'A' SAMPLE PROGRAM.\n");
     memory[0] = 1;   // LOAD 10
     memory[1] = 10;
 
@@ -22,6 +22,15 @@ void sampleProgram() {
 
     memory[5] = 255; // HALT
 }
+
+void sampleProgramB() {
+    printf("RUNNING 'B' SAMPLE PROGRAM.\n");
+    memory[0] = 1; //Set B to 65.
+    memory[1] = 65;
+
+
+}
+
 
 int main() {
     printf("EMULATOR STARTED.\n");
@@ -44,6 +53,11 @@ int main() {
         case 3:  // PRINT
             printf("%d\n", A);
             PC += 1;
+            break;
+
+        case 4: // LOAD B
+            B = memory[PC+1];
+            PC+=2;
             break;
 
         case 255: // HALT
