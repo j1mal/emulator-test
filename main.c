@@ -11,7 +11,7 @@ int running = 1;
 
 
 void sampleProgram() {
-    printf("RUNNING SAMPLE PROGRAM\n");
+    printf("RUNNING SAMPLE PROGRAM.\n");
     memory[0] = 1;   // LOAD 10
     memory[1] = 10;
 
