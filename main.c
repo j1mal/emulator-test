@@ -40,12 +40,12 @@ int main() {
        
         switch (opcode) {
 
-        case 1:  // LOAD
+        case 1:  // LOAD (B)
             A = memory[PC + 1];
             PC += 2;
             break;
 
-        case 2:  // ADD
+        case 2:  // ADD (A)
             A += memory[PC + 1];
             PC += 2;
             break;
@@ -55,10 +55,13 @@ int main() {
             PC += 1;
             break;
 
-        case 4: // LOAD B
+        case 4: // LOAD (B)
             B = memory[PC+1];
             PC+=2;
             break;
+
+        case 5: // ADD B
+            
 
         case 255: // HALT
             running = 0;
