@@ -26,8 +26,15 @@ void sampleProgram() {
 
 void sampleProgramB() {
     printf("RUNNING 'B' SAMPLE PROGRAM.\n");
-    memory[0] = 1; //Set B to 65.
+    memory[0] = 4; //Set B to 65.
     memory[1] = 65;
+
+    memory[2] = 5; //Add 2 to B
+    memory[3] = 2;
+
+    memory[4] = 6; //Print B
+
+    memory[5] = 255; // Halt
 
 
 }
@@ -35,7 +42,7 @@ void sampleProgramB() {
 
 int main() {
     printf("EMULATOR STARTED.\n");
-    sampleProgram();
+    sampleProgramB();
     while (running) {
         unsigned char opcode = memory[PC]; //setting the opcode to 1
        
@@ -51,7 +58,7 @@ int main() {
             PC += 2;
             break;
 
-        case 3:  // PRINT
+        case 3:  // PRINT (A)
             printf("%d\n", A);
             PC += 1;
             break;
@@ -62,7 +69,14 @@ int main() {
             break;
 
         case 5: // ADD B
-            
+            B += memory[PC + 1];
+            PC +=2;
+            break;
+        
+        case 6: // PRINT (B)
+            printf("%d\n",B);
+            PC +=1;
+            break;
 
         case 255: // HALT
             running = 0;
