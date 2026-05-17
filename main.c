@@ -41,7 +41,7 @@ int main() {
        
         switch (opcode) {
 
-        case 1:  // LOAD (B)
+        case 1:  // LOAD (A)
             A = memory[PC + 1];
             PC += 2;
             break;
